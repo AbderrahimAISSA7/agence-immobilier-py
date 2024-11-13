@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Désistement</title>
+    <!-- Ajout de Bootstrap pour un design moderne -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 30px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulaire de Désistement</h1>
+
+        <form action="{{ url_for('creer_desistement') }}" method="POST">
+            <fieldset>
+                <legend class="mb-4">Informations de Désistement</legend>
+
+                <div class="form-group">
+                    <label for="promesse_vente_id">Promesse de Vente ID:</label>
+                    <input type="number" class="form-control" id="promesse_vente_id" name="promesse_vente_id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cause_annulation">Cause de l'annulation:</label>
+                    <textarea class="form-control" id="cause_annulation" name="cause_annulation" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4">Soumettre</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Script Bootstrap pour les composants interactifs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
